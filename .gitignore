@@ -10,9 +10,17 @@ idea/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/vcs.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/uiDesigner.xml
 *.iws
 *.iml
 *.ipr
+
+
+
+
 
 ### Eclipse ###
 .apt_generated
@@ -65,3 +73,6 @@ build/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+
+
