@@ -23,7 +23,7 @@ public class MyMap {
         System.out.println(mapList1);
 
 
-        System.out.println("---LinkedHashMap bizim yazdığımı sırayala girişleri yapar------");
+        System.out.println("---LinkedHashMap bizim yazdığımız sırayla girişleri yapar------");
 
         Map<String, String> mapList2 = new LinkedHashMap<>();
 
@@ -41,7 +41,9 @@ public class MyMap {
 
         System.out.println("---TreeMap------");
 
-        Map<String, String> mapList3 = new TreeMap<>();
+       // Map<String, String> mapList3 = new TreeMap<>();
+        TreeMap<String, String> mapList3 = new TreeMap<>();
+
 
         //  Key   Value
         mapList3.put("Ankara", "06");
@@ -68,6 +70,9 @@ public class MyMap {
 
 
         Map<String, String> mapList4 = new Hashtable<>();
+        //  Hashtable<String, String> mapList4 = new Hashtable<>();
+
+
 
         //  Key   Value
         mapList4.put("Ankara", "06");
