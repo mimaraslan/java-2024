@@ -64,7 +64,7 @@ public class MyMap {
          //   System.out.println( mapList3.get(key)); // value
         }
 
-        System.out.println("---------");
+        System.out.println("---Hashtable Key ve Value null olamaz!!------");
 
 
         Map<String, String> mapList4 = new Hashtable<>();
