@@ -5,13 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mimaraslan</groupId>
-    <artifactId>java-16-collections-koleksiyonlar-torbalar</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <artifactId>java-16-collections</artifactId>
+    <version>1.0.0</version>
+<!--
+      x.y.z
+      saat.dakika.saniye
+-->
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>
