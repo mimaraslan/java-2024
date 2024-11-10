@@ -8,8 +8,13 @@ public class Student {
     private String lastName;
     private String email;
     private String phone;
+    private Boolean registerStatus;
 
     public Student() {
+    }
+
+    public Student(String firstName) {
+        this.firstName = firstName;
     }
 
     public Student(Integer id, String firstName, String lastName, String email) {
@@ -27,6 +32,14 @@ public class Student {
         this.phone = phone;
     }
 
+    public Student(Integer id, String firstName, String lastName, String email, String phone, Boolean registerStatus) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.registerStatus = registerStatus;
+    }
 
     public Integer getId() {
         return id;
@@ -66,5 +79,27 @@ public class Student {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+
+    public Boolean getRegisterStatus() {
+        return registerStatus;
+    }
+
+    public void setRegisterStatus(Boolean registerStatus) {
+        this.registerStatus = registerStatus;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", registerStatus=" + registerStatus +
+                '}';
     }
 }
