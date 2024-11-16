@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class AppMain {
 
+   public static long sayac =0;
+
     public static void main(String[] args) {
 
         long startTime = System.currentTimeMillis();
@@ -16,7 +18,8 @@ public class AppMain {
 
             try {
 
-                for (int i = 1; i <= 6; i++) {
+                for (int i = 1; i <= 8; i++) {
+                    sayac++;
                     System.out.println("\n" + i + ". KOLON----------------------");
 
                     for (int j = 0; j < 6; j++) {
@@ -24,6 +27,12 @@ public class AppMain {
                         System.out.print(randomNo.nextInt(50) + " ");
                     }
                     System.out.println();
+
+                    if (sayac == 5) {
+                        mainThreadName.interrupt();
+                        break;
+                    }
+
                 }
 
             } catch (InterruptedException e){
