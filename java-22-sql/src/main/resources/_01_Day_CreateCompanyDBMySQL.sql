@@ -1,6 +1,5 @@
 -- VERITABANINI OLUSTURYORUZ
-CREATE SCHEMA `my_company_db` DEFAULT
-    CHARACTER SET utf32 COLLATE utf32_bin ;
+CREATE SCHEMA `my_company_db` DEFAULT CHARACTER SET utf32 COLLATE utf32_bin ;
 
 
 
@@ -34,6 +33,12 @@ ALTER TABLE `my_company_db`.`products`
 -- VERITABINI SILER
 -- DROP DATABASE `my_company_db`;
 
--- MUSTERILERI LISTELE GOSTER
-SELECT * FROM my_company_db.customers;
 
+
+-- MUSTERI TABLOSUNA KAYITLAR EKLENDI
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Mahmut', 'Sakarya');
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Hakan', 'Metin');
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Mücahit', 'Özcan');
+
+-- MUSTERILERI LISTELE GOSTER
+SELECT * FROM `my_company_db`.`customers`;

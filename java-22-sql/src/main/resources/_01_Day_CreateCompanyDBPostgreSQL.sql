@@ -28,5 +28,14 @@ CREATE TABLE my_company_db.products
 ALTER TABLE IF EXISTS my_company_db.products
     OWNER to postgres;
 
+
+-- MUSTERI TABLOSUNA KAYITLAR EKLENDI
+INSERT INTO my_company_db.customers ("FIRST_NAME", "LAST_NAME") VALUES ('Mahmut', 'Sakarya');
+INSERT INTO my_company_db.customers ("FIRST_NAME", "LAST_NAME") VALUES ('Hakan', 'Metin');
+INSERT INTO my_company_db.customers ("FIRST_NAME", "LAST_NAME") VALUES ('Mücahit', 'Özcan');
+
+
 -- MUSTERILERI LISTELE GOSTER
 SELECT * FROM my_company_db.customers;
+
+
