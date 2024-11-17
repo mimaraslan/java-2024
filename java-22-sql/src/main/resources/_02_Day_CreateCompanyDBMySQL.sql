@@ -1,0 +1,177 @@
+-- VERITABANINI OLUSTURYORUZ
+CREATE SCHEMA `my_company_db` DEFAULT CHARACTER SET utf32 COLLATE utf32_bin ;
+
+
+
+
+
+--  MUSTERILER TABLOSU
+CREATE TABLE `my_company_db`.`customers` (
+                                             `ID` INT NOT NULL AUTO_INCREMENT,
+                                             `FIRST_NAME` VARCHAR(60) NULL,
+                                             `LAST_NAME` VARCHAR(60) NULL,
+                                             PRIMARY KEY (`ID`));
+
+
+
+
+
+-- URUNLER TABLOSU
+CREATE TABLE `my_company_db`.`products` (
+                                            `ID` INT NOT NULL AUTO_INCREMENT,
+                                            `PROD_NAME` VARCHAR(200) NULL,
+                                            `PROD_CODE` VARCHAR(45) NULL,
+                                            PRIMARY KEY (`ID`));
+
+-- TABLO UZERINDE DEGISIKLIK YAPAR
+ALTER TABLE `my_company_db`.`products`
+    CHANGE COLUMN `PROD_Code` `PROD_CODE` VARCHAR(45) NULL DEFAULT NULL ;
+
+-- URUNLER TABLOLSUNU SILER
+-- DROP TABLE `mycompany`.`products`;
+
+-- VERITABINI SILER
+-- DROP DATABASE `my_company_db`;
+
+
+
+-- MUSTERI TABLOSUNA KAYITLAR EKLENDI
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Mahmut', 'Sakarya');
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Hakan', 'Metin');
+INSERT INTO `my_company_db`.`customers` (`FIRST_NAME`, `LAST_NAME`) VALUES ('Mücahit', 'Özcan');
+
+-- MUSTERILERI LISTELE GOSTER
+SELECT * FROM `my_company_db`.`customers`;
+
+
+
+-- SADECE 1 KAYIT EKLE
+INSERT INTO `my_company_db`.`customers`
+(`FIRST_NAME`, `LAST_NAME`)
+VALUES ('Tuana', 'Kaymaz');
+
+-- SADECE 1 KAYIT EKLE
+INSERT INTO my_company_db.customers
+(FIRST_NAME, LAST_NAME)
+VALUES('Sefa', 'Küçükarslan');
+
+-- MUSTERILERI LISTELE GOSTER
+SELECT * FROM my_company_db.customers;
+
+
+
+-- TABLOYA 2 TANE YENI KOLON EKLEDIK VE 3 KOLON UZERINDE DE DEGISIKLIK YAPTIK
+ALTER TABLE `my_company_db`.`customers`
+    ADD COLUMN `AGE` SMALLINT(3) NULL AFTER `LAST_NAME`,
+    ADD COLUMN `COUNTRY` VARCHAR(65) NULL AFTER `AGE`,
+    CHANGE COLUMN `ID` `CUSTOMER_ID` INT NOT NULL ,
+    CHANGE COLUMN `FIRST_NAME` `FIRST_NAME` VARCHAR(70) NULL DEFAULT NULL ,
+    CHANGE COLUMN `LAST_NAME` `LAST_NAME` VARCHAR(75) NULL DEFAULT NULL ;
+
+
+-- TABLODA YENI EKLENEN KOLONLARA DEGER GIRILDI
+UPDATE `my_company_db`.`customers` SET `AGE` = '30', `COUNTRY` = 'TR' WHERE (`CUSTOMER_ID` = '1');
+UPDATE `my_company_db`.`customers` SET `AGE` = '22', `COUNTRY` = 'BR' WHERE (`CUSTOMER_ID` = '2');
+UPDATE `my_company_db`.`customers` SET `AGE` = '25', `COUNTRY` = 'DE' WHERE (`CUSTOMER_ID` = '3');
+UPDATE `my_company_db`.`customers` SET `AGE` = '27', `COUNTRY` = 'GB' WHERE (`CUSTOMER_ID` = '4');
+UPDATE `my_company_db`.`customers` SET `AGE` = '32', `COUNTRY` = 'TR' WHERE (`CUSTOMER_ID` = '5');
+
+
+-- MUSTERILERI LISTELE GOSTER
+SELECT * FROM `my_company_db`.`customers`;
+
+
+
+-- SADECE 2 KOLON SECILDI - MUSTERILERI LISTELE GOSTER
+SELECT customers.FIRST_NAME, customers.LAST_NAME  FROM `my_company_db`.`customers`;
+
+
+
+-- SADECE 3 KOLON SECILDI - MUSTERILERI LISTELE GOSTER
+SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME  FROM `my_company_db`.`customers`;
+
+
+-- ULKESI TR OLAN MUSTERILERI GETIR
+SELECT * FROM my_company_db.customers
+WHERE COUNTRY = 'TR';
+
+-- VE KULLANIMI - ULKESI TR ve SOYADI 'Sakarya' OLAN MUSTERILERI GETIR
+SELECT * FROM my_company_db.customers
+WHERE COUNTRY = 'TR' AND  customers.LAST_NAME = 'Sakarya';
+
+
+-- VEYA KULLANIMI - ULKESI TR veya SOYADI 'Metin' OLAN MUSTERILERI GETIR
+SELECT *
+FROM customers
+WHERE COUNTRY = 'TR'  OR  LAST_NAME = 'Metin';
+
+
+-- ISIM VE SOYISIM KOLONLARINI SEC - ULKESI TR veya SOYADI 'Metin' OLAN MUSTERILERI GETIR
+SELECT FIRST_NAME, LAST_NAME
+FROM customers
+WHERE COUNTRY = 'TR'  OR  LAST_NAME = 'Metin';
+
+
+-- YASI 27'DEN BUYUK OLANLARI GETIR
+SELECT * FROM customers
+WHERE AGE > 27 ;
+
+-- YASI 27'DEN BUYUK OLANLAR VE ULKESI ALMANYA 'DE' OLANLARI GETIR
+SELECT * FROM customers
+WHERE AGE > 27  AND   COUNTRY = 'DE' ;
+
+-- TABLOYA YENI 2 TANE KOLON EKLENDI
+ALTER TABLE `my_company_db`.`customers`
+    ADD COLUMN `EMAIL` VARCHAR(100) NULL AFTER `COUNTRY`,
+    ADD COLUMN `GENDER` VARCHAR(1) NULL AFTER `EMAIL`;
+
+
+
+-- ID ICIN OTOMATIK SAYACI KULLANIYORUZ
+ALTER TABLE `my_company_db`.`customers`
+    CHANGE COLUMN `CUSTOMER_ID` `CUSTOMER_ID` INT NOT NULL AUTO_INCREMENT ;
+
+
+-- YENI BIR KAYIT EKLENECEK
+insert into customers (FIRST_NAME, LAST_NAME, AGE, COUNTRY, EMAIL, GENDER)
+values ('Ali', 'Garip', 26, 'USA', 'mpinck0@typepad.com', 'M');
+
+-- BUTUN KAYITLI MUSTERILERI LISTELE
+SELECT * FROM customers;
+
+
+
+
+-- ULKESI ALMANYA OLAN MUSTERILERIMIZI LISTELE
+SELECT * FROM customers
+WHERE COUNTRY = 'DE';
+
+
+
+-- ULKESI ALMANYA OLAN VE KADIN MUSTERILERIMIZI LISTELE
+SELECT * FROM customers
+WHERE COUNTRY = 'DE' AND GENDER = 'F';
+
+-- SADECE ADI, SOYADI VE ULKE KODU OLSUN. ULKESI ALMANYA OLAN ERKEK MUSTERILERIMIZI LISTELE
+SELECT COUNTRY, FIRST_NAME, LAST_NAME FROM customers
+WHERE COUNTRY = 'DE' AND GENDER = 'M';
+
+
+-- ULKESI ALMANYA VEYA TURKIYE OLAN MUSTERILERIMI GETIR
+SELECT  * FROM customers
+WHERE COUNTRY = 'DE' OR COUNTRY ='TR';
+
+
+-- ULKESI ALMANYA VEYA TURKIYE OLAN    VE   25 YAŞINDAN BUYUK MUSTERILERIMI GETIR
+SELECT  * FROM customers
+WHERE (COUNTRY = 'DE' OR COUNTRY ='TR')   AND  AGE > 25;
+
+-- ULKESI ALMANYA OLMAYANLAR
+SELECT  * FROM customers
+WHERE COUNTRY != 'DE';
+
+-- ULKESI ALMANYA OLMAYANLAR
+SELECT  * FROM customers
+WHERE  NOT COUNTRY  = 'DE';
+
+
