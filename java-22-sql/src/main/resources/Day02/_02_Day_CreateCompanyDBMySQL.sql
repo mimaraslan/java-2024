@@ -388,6 +388,9 @@ ORDER BY TOTAL_PERSON DESC ;
 -- DROP TABLE `my_company_db`.`customers`;
 
 -- GUNCELLEMEDE VE SILMEDE SART KISMI COK ONEMLIDIR!!!
+-- update yaparken PK dışında where condition yazılamıyor.
+-- SET SQL_SAFE_UPDATES = 0; ayarını yapmak gerekiyor
+
 UPDATE `my_company_db`.`customers`
 SET
     `FIRST_NAME` = 'Barış',
