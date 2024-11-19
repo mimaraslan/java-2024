@@ -91,5 +91,42 @@ public class StreamdenListeye {
         System.out.println(maxEntry.getKey());
         System.out.println(maxEntry.getValue());
 
+
+
+        System.out.println("----MAP 2------------------------------");
+
+
+        Map<String, Integer> myMap = new HashMap<>();
+        myMap.put("Ahmet", 25);
+        myMap.put("Mehmet", 30);
+        myMap.put("Ali", 20);
+        myMap.put("Garip", 35);
+        myMap.put("Tuana", 22);
+        myMap.put("Fatma", 28);
+        myMap.put("Emre", 32);
+        myMap.put("Hakan", 38);
+        myMap.put("Metin", 24);
+        myMap.put("Cemre", 29);
+
+        System.out.println("Yaşı 25'ten büyük olanlar:");
+        myMap.entrySet().stream()
+                        .filter(entry -> entry.getValue() > 25)
+                        .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+
+        System.out.println("\nTüm isimler:");
+        myMap.keySet().stream()
+                        .forEach(System.out::println);
+
+        System.out.println("\nTüm yaşlar:");
+        myMap.values().stream()
+                        .forEach(System.out::println);
+
+        System.out.println("\nTüm girişler:");
+        myMap.entrySet().stream()
+                        .map(entry -> entry.getKey() + ": " + entry.getValue())
+                        .forEach(System.out::println);
+
+
+
     }
 }
