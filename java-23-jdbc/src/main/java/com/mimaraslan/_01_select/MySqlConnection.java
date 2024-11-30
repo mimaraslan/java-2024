@@ -1,8 +1,8 @@
-package com.mimaraslan;
+package com.mimaraslan._01_select;
 
 import java.sql.*;
 
-public class MyPostgreSqlConnection {
+public class MySqlConnection {
 
 
     public static void main(String[] args) {
@@ -14,18 +14,18 @@ public class MyPostgreSqlConnection {
         try{
 
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/postgres",
-                    "postgres",
+                    "jdbc:mysql://localhost:3306/benim_sirketim",
+                    "root",
                     "123456789");
 
             statement = connection.createStatement();
 
 
-            String sql1 = "SELECT * FROM public.musteriler";
-            String sql2 = "SELECT * FROM mycompanydb.musteriler";
-            String sql3 = "SELECT * FROM public.musteriler WHERE yasi>25";
+            String sql1 = "SELECT * FROM musteriler";
+            String sql2 = "SELECT * FROM musteriler";
+            String sql3 = "SELECT * FROM musteriler WHERE yasi>25";
 
-            resultSet = statement.executeQuery(sql3);
+            resultSet = statement.executeQuery(sql1);
 
             while(resultSet.next()){
                 /*
