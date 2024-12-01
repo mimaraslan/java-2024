@@ -33,7 +33,7 @@ public class AppMain {
         MyCrud myCrud = new MyCrud();
 
         System.out.println("----READ---------");
-         myCrud.getButunMusteriler(SQL_BUTUN_MUSTERILER);
+        myCrud.getButunMusteriler(SQL_BUTUN_MUSTERILER);
 /*
         System.out.println("----UPDATE---------");
         myCrud.updateMusteriIdUzerinden(SQL_MUSTERI_ID_BILGISINE_GORE_GUNCELLE);
