@@ -9,11 +9,14 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CUSTOMER_ID")
    private int id;
 
-   private String firstName;
+    @Column(name = "FIRST_NAME")
+    private String firstName;
 
-   private String lastName;
+    @Column(name = "LAST_NAME")
+    private String lastName;
 
     public Customer() {
     }

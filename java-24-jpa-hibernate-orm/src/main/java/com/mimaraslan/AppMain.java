@@ -2,6 +2,7 @@ package com.mimaraslan;
 
 import com.mimaraslan.entity.Customer;
 import com.mimaraslan.util.HibernateUtil;
+import org.hibernate.HibernateError;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -16,16 +17,14 @@ public class AppMain {
         customer2.setFirstName("Süleyman");
         customer2.setLastName("Kesik");
 
-        System.out.println(customer1);
-        System.out.println(customer2);
+    //    System.out.println(customer1);
+    //    System.out.println(customer2);
 
 
-        System.out.println(customer1.getId() +  " " + customer1.getFirstName() + " " + customer1.getLastName());
-        System.out.println(customer2.getId() +  " " + customer2.getFirstName() + " " + customer2.getLastName());
-
+   //     System.out.println(customer1.getId() +  " " + customer1.getFirstName() + " " + customer1.getLastName());
+   //     System.out.println(customer2.getId() +  " " + customer2.getFirstName() + " " + customer2.getLastName());
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-
         Transaction transaction = null;
 
         try {
@@ -35,8 +34,10 @@ public class AppMain {
                 session.save(customer2);
             transaction.commit();
 
-        } catch () {
-
+        } catch (HibernateError e) {
+            System.out.println("HibernateError : " + e.getMessage());
+        } finally {
+            session.close();
         }
 
 
