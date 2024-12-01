@@ -27,8 +27,10 @@ public class CustomerDetail {
             @org.hibernate.annotations.Parameter(name = "property", value="customer")
              }
     )
+
     @Column(name = "CUSTOMER_ID")
     private int customerId;
+
 
     @Column(name = "ADDRESS", length = 1000)
     private String address;
