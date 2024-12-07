@@ -32,7 +32,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="com.mimaraslan.entity.Customer"/>
-        <mapping class="com.mimaraslan.entity.Order"/>
+        <mapping class="com.mimaraslan.entity.CustomerDetail"/>
 
 
     </session-factory>
