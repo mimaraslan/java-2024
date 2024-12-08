@@ -3,18 +3,17 @@ package com.mimaraslan.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "OWNERS")
-@AttributeOverrides({
-        @AttributeOverride(name = "firstname", column = @Column(name = "FIRST_NAME")),
-        @AttributeOverride(name = "lastname", column = @Column(name = "LAST_NAME")),
-        @AttributeOverride(name = "address", column = @Column(name = "ADDRESS"))
-})
+@Table(name = "OWNERS") // JOINED - TABLE_PER_CLASS
+// @DiscriminatorValue("OWNERS")  // SINGLE_TABLE
 public class Owner extends Person {
-/*
+
+    // FIXME Id değerini otomatik sıralı vermeye bakılacak.
+    /*
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "OWNER_ID")
     */
+    // @Transient // Bu alanı kolon yapma
     private Long ownerId;
 
     private String title;

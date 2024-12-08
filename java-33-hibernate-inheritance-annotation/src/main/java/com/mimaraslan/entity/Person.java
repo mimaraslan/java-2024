@@ -1,15 +1,20 @@
 package com.mimaraslan.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "PERSONS")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorColumn(name = "person_type", discriminatorType = DiscriminatorType.STRING) // SINGLE_TABLE
 public class Person {
 
   @Id
- // @GeneratedValue(strategy = GenerationType.IDENTITY)
+//  @GeneratedValue(strategy = GenerationType.IDENTITY) // SINGLE_TABLE
+//  @GeneratedValue(strategy = GenerationType.AUTO) // TABLE_PER_CLASS
+
+
+  @GeneratedValue(strategy = GenerationType.IDENTITY) // JOINED
+
   @Column(name = "PERSON_ID")
   private Long personId;
 
@@ -19,7 +24,7 @@ public class Person {
     @Column(name = "LAST_NAME")
     private String lastname;
 
-    @Column(name = "ADDRESS")
+    @Column(name = "ADDRESS", nullable = false)
     private String address;
 
 

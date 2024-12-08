@@ -4,20 +4,18 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-
 @Entity
-@Table(name = "EMPLOYEES")
-@AttributeOverrides({
-        @AttributeOverride(name = "firstname", column = @Column(name = "FIRST_NAME")),
-        @AttributeOverride(name = "lastname", column = @Column(name = "LAST_NAME")),
-        @AttributeOverride(name = "address", column = @Column(name = "ADDRESS"))
-})
+@Table(name = "EMPLOYEES") // JOINED - TABLE_PER_CLASS
+//@DiscriminatorValue("EMPLOYEES") // SINGLE_TABLE
 public class Employee extends Person {
-/*
+
+    // FIXME Id değerini otomatik sıralı vermeye bakılacak.
+   /*
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEE_ID")
     */
+    @Transient // Bu alanı kolon yapma
     private Long employeeId;
 
     @Column(name = "PHONE")
@@ -29,6 +27,7 @@ public class Employee extends Person {
     private Date joinDate;
 
     private Long department;
+
 
     public Employee() {
         super();

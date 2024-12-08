@@ -16,18 +16,19 @@ public class AppMain {
 
 
         Person person1 = new Person("Sefa","Küçükarslan");
+        person1.setAddress("Adana");
        // person1.setPersonId(1L);
 
 
         Employee employee1 = new Employee("Serdar","Çırak", "Ankara",
                 "1111", "abc@gmail.com",
                 10000, new Date(), 1453L);
-       // employee1.setEmployeeId(1L);
+        employee1.setEmployeeId(1L);
 
 
         Owner owner1 = new Owner("Volkan","Kaytmaz","İzmir",
                "Project Manager" );
-      //   owner1.setOwnerId(1L);
+        // owner1.setOwnerId(1L);
 
 
 
@@ -38,9 +39,14 @@ public class AppMain {
 
             transaction = session.beginTransaction();
 
-                session.save(person1);
-                session.save(owner1);
-                session.save(employee1);
+                session.persist(person1);
+                session.flush(); //  transaction arasında oluğu kadarını say kaydet.
+
+                session.persist(owner1);
+                session.flush();
+
+                session.persist(employee1);
+                session.flush();
 
             transaction.commit();
 
