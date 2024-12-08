@@ -37,6 +37,8 @@
         <mapping class="com.mimaraslan.entity.Employee"/>
         -->
 
+        <mapping resource="Personel.hbm.xml" />
+
 
     </session-factory>
 </hibernate-configuration>

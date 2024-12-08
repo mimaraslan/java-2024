@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="com.mimaraslan.entity">
 
-    <class name="Person" table="PERSON">
+    <class name="Person" table="PERSONS">
         <id type="java.lang.Long"  name="personId" column="PERSON_ID">
             <generator class="identity"/>
         </id>
@@ -14,18 +14,18 @@
         <property type="java.lang.String" name="address" column="ADDRESS" length="200" />
     </class>
 
-    <class name="Employee">
+    <class name="Employee" table="EMPLOYEES">
         <id type="java.lang.Long"  name="employeeId" column="EMPLOYEE_ID">
             <generator class="identity"/>
         </id>
-        <property type="java.lang.String"  name="phone" column="PHONE" length="200" />
-        <property type="java.lang.String" name="email" column="EMAIL" length="200" />
-        <property type="int" name="salary" column="SALARY"  />
-        <property type="java.util.Date" name="joinDate" column="JOIN_DATE"  />
-        <property type="java.lang.Long" name="department" column="DEPARTMENT"  />
+        <property type="java.lang.String"  name="phone"      column="PHONE" length="200"   />
+        <property type="java.lang.String"  name="email"      column="EMAIL" length="200" />
+        <property type="int"               name="salary"     column="SALARY"  />
+        <property type="java.util.Date"    name="joinDate"   column="JOIN_DATE"  />
+        <property type="java.lang.Long"    name="department" column="DEPARTMENT"  />
     </class>
 
-    <class name="Owner">
+    <class name="Owner"  table="OWNERS">
         <id type="java.lang.Long"  name="ownerId" column="OWNER_ID">
             <generator class="identity"/>
         </id>

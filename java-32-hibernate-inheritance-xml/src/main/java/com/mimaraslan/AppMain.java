@@ -34,9 +34,11 @@ public class AppMain {
         try {
 
             transaction = session.beginTransaction();
+
                 session.save(person1);
                 session.save(owner1);
                 session.save(employee1);
+
             transaction.commit();
 
         } catch (HibernateError e) {
