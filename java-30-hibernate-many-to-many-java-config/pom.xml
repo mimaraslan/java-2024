@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mimaraslan</groupId>
-  <artifactId>java-31-hibernate-query-language-hql</artifactId>
+  <artifactId>java-30-hibernate-many-to-many-java-config</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>java-30-hibernate-query-language-hql</name>
+  <name>java-30-hibernate-many-to-many-java-config</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -64,5 +64,6 @@
     <!-- TEST END -->
 
   </dependencies>
+
 
 </project>
