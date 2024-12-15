@@ -25,4 +25,18 @@ public class ProfileConfig {
         return "My Profile :  Production";
     }
 
+
+    @Profile("dev-mysql")
+    @Bean(name = "myProfileBean")
+    public String createDevMySqlBean() {
+        return "My Profile :  MySQL Development";
+    }
+
+
+    @Profile("dev-postges")
+    @Bean(name = "myProfileBean")
+    public String createDevPostgeSqlBean() {
+        return "My Profile :  PostgeSQL Development";
+    }
+
 }

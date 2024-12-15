@@ -46,8 +46,9 @@ public class StudentController {
     //   JAVA - RESTful  - SQL
     //  READ  - GET  - SELECT     // Servise git.  git öğrencileri al gel.
 
+    // http://localhost:9090/api/v1/students
     // http://localhost:9090/api/v1/student/all
-    @GetMapping("/student/all")
+    @GetMapping( { "/students" ,  "/student/all"})
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }

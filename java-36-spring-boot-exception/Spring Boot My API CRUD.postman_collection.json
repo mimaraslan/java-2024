@@ -1,0 +1,842 @@
+{
+	"info": {
+		"_postman_id": "11596239-0ab3-4101-a06e-58e534db6fc6",
+		"name": "Spring Boot My API CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "77926",
+		"_collection_link": "https://interstellar-capsule-247109.postman.co/workspace/Java-2024~f73524f9-dba0-4763-8e27-e4f79695829d/collection/77926-11596239-0ab3-4101-a06e-58e534db6fc6?action=share&source=collection_link&creator=77926"
+	},
+	"item": [
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "hello1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/hello1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"hello1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hello2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:9090/api/v1/hello2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"hello2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "students",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/30000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"30000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ahmet\",\r\n    \"lastName\": \"Vatansever\",\r\n    \"email\": \"vvvv@abbb.com\",\r\n    \"phone\": \"44444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ali\",\r\n    \"lastName\": \"Fırat\",\r\n    \"email\": \"gdfgd@vcbcdbd.com\",\r\n    \"phone\": \"5675474\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ali\",\r\n    \"lastName\": \"Fırat\",\r\n    \"email\": \"gdfgd@vcbcdbd.com\",\r\n    \"phone\": \"5675474\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student v1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Cananoğlu\",\r\n    \"email\": \"veeeevvv@abbb.com\",\r\n    \"phone\": \"1111111344323\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Cihan\",\r\n    \"lastName\": \"Çelik\",\r\n    \"email\": \"cccaaa@abbb.com\",\r\n    \"phone\": \"11111555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Cerrah\",\r\n    \"email\": \"eeeee@abbb.com\",\r\n    \"phone\": \"7867\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Burhan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/student/70000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"70000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "teacher/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9095/api/v1/teacher/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/87b51575-5db1-4745-9565-0db2ac682269",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"87b51575-5db1-4745-9565-0db2ac682269"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/40300348-a85b-4d8b-8f6f-ebe775d8f753",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"40300348-a85b-4d8b-8f6f-ebe775d8f753"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/0814852c-5b8c-4d86-b317-d8554ecb9ad5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"0814852c-5b8c-4d86-b317-d8554ecb9ad5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Bünyamin\",\r\n    \"lastName\": \"Bey\",\r\n    \"email\": \"vbbbvvv@abbb.com\",\r\n    \"phone\": \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ali\",\r\n    \"lastName\": \"Fırat\",\r\n    \"email\": \"gdfgd@vcbcdbd.com\",\r\n    \"phone\": \"5675474\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Cüneyt\",\r\n    \"lastName\": \"Soylu\",\r\n    \"email\": \"cccc@vcbcdbd.com\",\r\n    \"phone\": \"5675474\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher v1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Cananoğlu\",\r\n    \"email\": \"veeeevvv@abbb.com\",\r\n    \"phone\": \"765744444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Cihan\",\r\n    \"lastName\": \"Çelik\",\r\n    \"email\": \"cccaaa@abbb.com\",\r\n    \"phone\": \"11111555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Cerrah\",\r\n    \"email\": \"eeeee@abbb.com\",\r\n    \"phone\": \"7867\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher v2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Burhan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher/3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/teacher/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
