@@ -2,7 +2,10 @@ package com.mimaraslan.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data // ====> @Setter  +  @Getter
 @AllArgsConstructor
