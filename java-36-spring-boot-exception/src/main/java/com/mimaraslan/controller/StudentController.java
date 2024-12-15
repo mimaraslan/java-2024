@@ -99,7 +99,6 @@ public class StudentController {
     // http://localhost:9090/api/v1/student/1
     @DeleteMapping("/student/{id}")
     public String deleteStudent( @PathVariable (name = "id")   Long id)  throws ResourceNotFoundException_404 {
-
         return studentService.deleteStudent(id);
     }
 
