@@ -12,14 +12,14 @@ import lombok.*;
 
 
 @Entity
-@Table(name = "students")
-public class Student {
+@Table(name = "teachers")
+public class Teacher {
 
    @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
+   @GeneratedValue(strategy = GenerationType.UUID)
+   private String id;
 
-   @Column(name = "FIRST_NAME",  length = 100, nullable = false)
+   @Column(name = "FIRST_NAME",  length = 100)
    private String firstName;
 
    @Column(name = "LAST_NAME",  length = 150)
@@ -34,10 +34,10 @@ public class Student {
 
 
 /*
-    public Student() {
+    public Teacher() {
     }
 
-    public Student(String firstName, String lastName, String email, String phone) {
+    public Teacher(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
