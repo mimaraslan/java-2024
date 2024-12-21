@@ -19,4 +19,8 @@ public class ErrorDetails {
         this.details = details;
         this.status = status;
     }
+
+    public Number delayFormula(Number x){
+        return 2*x+1;
+    }
 }
