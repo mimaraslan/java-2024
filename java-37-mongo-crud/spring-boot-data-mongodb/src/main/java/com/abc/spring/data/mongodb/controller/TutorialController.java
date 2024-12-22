@@ -35,6 +35,7 @@ public class TutorialController {
 
 
   //GET    http://localhost:8090/api/tutorials
+  //GET    http://localhost:8090/api/tutorials?title=abc
   @GetMapping("/tutorials")
   public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
       return tutorialService.getAllTutorials(title);
@@ -46,12 +47,21 @@ public class TutorialController {
     return tutorialService.getTutorialById(id);
   }
 
+
   //GET    http://localhost:8090/api/tutorials/published
   @GetMapping("/tutorials/published")
   public ResponseEntity<List<Tutorial>> findByPublished() {
-    return tutorialService.findByPublished();
+    return tutorialService.findByPublished(true);
   }
 
+  // TODO true ve false durumu esnek yapılacak.
+  /*
+  //GET    http://localhost:8090/api/tutorials/published/:flag
+  @GetMapping("/tutorials/published/{flag}")
+  public ResponseEntity<List<Tutorial>> findByPublished(@PathVariable("flag") boolean flag) {
+    return tutorialService.findByPublished(flag);
+  }
+*/
 
 
   //POST    http://localhost:8090/api/tutorials

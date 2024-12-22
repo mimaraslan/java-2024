@@ -22,22 +22,25 @@ public class TutorialService {
 
   public ResponseEntity<List<Tutorial>> getAllTutorials(String title) {
     try {
-      List<Tutorial> tutorials = new ArrayList<Tutorial>();
+        List<Tutorial> tutorials = new ArrayList<>();
 
-      if (title == null)
-        tutorialRepository.findAll().forEach(tutorials::add);
-      else
-        tutorialRepository.findByTitleContaining(title).forEach(tutorials::add);
+        if (title == null) {
+          tutorialRepository.findAll().forEach(tutorials::add);
+        } else {
+          tutorialRepository.findByTitleContaining(title).forEach(tutorials::add);
+        }
 
-      if (tutorials.isEmpty()) {
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-      }
+        if (tutorials.isEmpty()) {
+          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
 
-      return new ResponseEntity<>(tutorials, HttpStatus.OK);
+        return new ResponseEntity<>(tutorials, HttpStatus.OK);
+
     } catch (Exception e) {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
 
   public ResponseEntity<Tutorial> getTutorialById(String id) {
     Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -47,7 +50,25 @@ public class TutorialService {
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
   }
+
+
+  public ResponseEntity<List<Tutorial>> findByPublished(boolean flag) {
+    try {
+      List<Tutorial> tutorials = tutorialRepository.findByPublished(flag);
+
+      if (tutorials.isEmpty()) {
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+      }
+      return new ResponseEntity<>(tutorials, HttpStatus.OK);
+    } catch (Exception e) {
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+
+
 
   public ResponseEntity<Tutorial> createTutorial(Tutorial tutorial) {
     try {
@@ -58,24 +79,36 @@ public class TutorialService {
     }
   }
 
+
+
   public ResponseEntity<Tutorial> updateTutorial(String id, Tutorial tutorial) {
+
     Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
 
     if (tutorialData.isPresent()) {
-      Tutorial _tutorial = tutorialData.get();
-      _tutorial.setTitle(tutorial.getTitle());
-      _tutorial.setDescription(tutorial.getDescription());
-      _tutorial.setPublished(tutorial.isPublished());
-      return new ResponseEntity<>(tutorialRepository.save(_tutorial), HttpStatus.OK);
+        Tutorial tutorialInfo = tutorialData.get();
+        tutorialInfo.setTitle(tutorial.getTitle());
+        tutorialInfo.setDescription(tutorial.getDescription());
+        tutorialInfo.setPublished(tutorial.isPublished());
+        return new ResponseEntity<>(tutorialRepository.save(tutorialInfo), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
 
+
+
   public ResponseEntity<HttpStatus> deleteTutorial(String id) {
     try {
-      tutorialRepository.deleteById(id);
-      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
+
+        if (tutorialData.isPresent()) {
+          tutorialRepository.deleteById(id);
+          return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -83,23 +116,11 @@ public class TutorialService {
 
   public ResponseEntity<HttpStatus> deleteAllTutorials() {
     try {
+      // TODO SIZE KONTROLU YAPILACAK
       tutorialRepository.deleteAll();
+      return new ResponseEntity<>(HttpStatus.OK);
+    } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    } catch (Exception e) {
-      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-  }
-
-  public ResponseEntity<List<Tutorial>> findByPublished() {
-    try {
-      List<Tutorial> tutorials = tutorialRepository.findByPublished(true);
-
-      if (tutorials.isEmpty()) {
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-      }
-      return new ResponseEntity<>(tutorials, HttpStatus.OK);
-    } catch (Exception e) {
-      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
