@@ -1,15 +1,18 @@
 package com.abc.spring.data.mongodb.model;
 
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-
-//TODO LOMBOK ENTEGRE EDILECEK.
-
+@Data // ====> @Setter  +  @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 
 @Document(collection = "tutorials")
 public class Tutorial {
+
   @Id
   private String id;
 
@@ -17,14 +20,16 @@ public class Tutorial {
   private String description;
   private boolean published;
 
-  public Tutorial() {
-
-  }
 
   public Tutorial(String title, String description, boolean published) {
     this.title = title;
     this.description = description;
     this.published = published;
+  }
+
+  /*
+  public Tutorial() {
+
   }
 
   public String getId() {
@@ -59,4 +64,5 @@ public class Tutorial {
   public String toString() {
     return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
   }
+  */
 }
