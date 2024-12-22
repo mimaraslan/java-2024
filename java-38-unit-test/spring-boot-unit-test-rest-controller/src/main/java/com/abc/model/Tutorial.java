@@ -1,4 +1,4 @@
-package com.bezkoder.spring.test.model;
+package com.abc.model;
 
 import jakarta.persistence.*;
 
