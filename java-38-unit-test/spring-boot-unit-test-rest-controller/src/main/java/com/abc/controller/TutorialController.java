@@ -31,7 +31,7 @@ public class TutorialController {
 
   //GET    http://localhost:8090/api/tutorials/:id
   @GetMapping("/tutorials/{id}")
-  public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") String id) {
+  public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") long id) {
     return tutorialService.getTutorialById(id);
   }
 
@@ -61,14 +61,14 @@ public class TutorialController {
 
   //PUT    http://localhost:8090/api/tutorials/:id
   @PutMapping("/tutorials/{id}")
-  public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") String id, @RequestBody Tutorial tutorial) {
+  public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") long id, @RequestBody Tutorial tutorial) {
     return tutorialService.updateTutorial(id, tutorial);
   }
 
 
   //DELETE    http://localhost:8090/api/tutorials/:id
   @DeleteMapping("/tutorials/{id}")
-  public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") String id) {
+  public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
    return tutorialService.deleteTutorial(id);
   }
 
