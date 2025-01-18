@@ -1,4 +1,0 @@
-rootProject.name = 'java-042-Microservices-Module-Demo'
-include 'ServiceA'
-include 'ServiceB'
-include 'ServiceC'
