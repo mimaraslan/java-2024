@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mimaraslan</groupId>
 	<artifactId>java-40-docker-hello-maven</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.3</version>
 	<name>java-40-docker-hello-maven</name>
 	<description>java-40-docker-hello-maven</description>
 	<url/>

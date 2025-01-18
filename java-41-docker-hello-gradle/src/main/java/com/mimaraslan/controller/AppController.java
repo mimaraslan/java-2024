@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-
 //       http://localhost:8080
 
 @RestController
@@ -14,13 +13,11 @@ import java.time.LocalDateTime;
 public class AppController {
 
 
-
 //       http://localhost:8080
 
     @GetMapping
-   public String getAppDockerHello(){
+    public String getAppDockerHello() {
         return "App Hello Docker : " + LocalDateTime.now();
    }
-
 
 }
