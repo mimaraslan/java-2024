@@ -1,0 +1,4 @@
+rootProject.name = 'java-43-Microservices-Module-Bagimliliklari'
+include 'ServiceA'
+include 'ServiceB'
+include 'ServiceC'

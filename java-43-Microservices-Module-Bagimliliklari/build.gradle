@@ -1,0 +1,82 @@
+/**
+ * ROOT build.gradle file:
+ */
+plugins {
+    /**
+     * Buraya yazılan özellikler tüm diğer servislerde etkili olacak.
+     * Diğerlerinde hiç yazmasak bile geçerli olacak bunlar.
+     */
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'application'
+    id 'java-library'
+}
+
+allprojects {
+    /**
+     * tüm projelere(root+sub) pluginleri atamak için:
+     */
+    apply from  :  "${rootDir}/dependencies.gradle"
+    apply plugin: 'application'
+    group = 'com.mimaraslan'
+    version = 'v.0.0.1'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility=JavaVersion.VERSION_17
+}
+
+subprojects {
+    /**
+     * sadece sub
+     * Bütün alt projelerimde group ve version adı ile
+     * diğer özelliklerin aynı olması için:
+     */
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            options.encoding = 'UTF-8'
+        }
+    }
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    apply plugin: 'java-library'
+
+    buildscript {
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${versions.springBoot}")
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    dependencies {
+        /**
+         * bütün projeye yayılacak bağımlıkları yazıyoruz.
+         * Yazarken libs içindekileri çekiyoruz.
+         * Bütün projelere entegre gelecek.
+         */
+        implementation libs.springBootWeb
+        compileOnly libs.lombok
+        annotationProcessor libs.lombok
+        implementation libs.mapStruct
+        annotationProcessor libs.mapStructProcessor
+        implementation libs.swaggerApi
+        implementation libs.postgreSql
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}

@@ -1,0 +1,34 @@
+ext {
+    /**
+     * Bağımlılıkları versiyonlama işlemleri:
+     */
+    versions = [
+            springBoot          : "3.2.2",
+            lombok              : "1.18.36",
+            mapStruct           : "1.5.5.Final",
+            postgreSql          : "42.7.1",
+            swaggerApi          : "2.3.0"
+    ]
+
+    /**
+     * Bu kısımda bağımlılık listesini oluştracağız. K:V
+     * 1. bağımlılığa bir ad belirle
+     * 2. iki nokta üst üste(:)
+     * 3. Projenin group idsini yazın.
+     * 4. iki nokta üst üste(:)
+     * 5. Projenin artifact id'sini yazın.
+     * 6. iki nokta üst üste(:)
+     * 7. Versiyon numarasını veya yukarıda belirttiğimiz key değerini çağır.
+     */
+    libs = [
+            springBootWeb                   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootDataJpa               : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+            postgreSql                      : "org.postgresql:postgresql:$versions.postgreSql",
+            lombok                          : "org.projectlombok:lombok:$versions.lombok",
+            mapStruct                       : "org.mapstruct:mapstruct:$versions.mapStruct",
+            mapStructProcessor              : "org.mapstruct:mapstruct-processor:$versions.mapStruct",
+            swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi"
+    ]
+}
+
+
