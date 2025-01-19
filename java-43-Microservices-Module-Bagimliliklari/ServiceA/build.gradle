@@ -1,4 +1,5 @@
-
 dependencies {
-   // implementation 'com.mysql:mysql-connector-j:9.1.0'
+    implementation 'com.mysql:mysql-connector-j:9.1.0'
+  //  implementation   libs.postgreSql
+    implementation   libs.springBootDataJpa
 }

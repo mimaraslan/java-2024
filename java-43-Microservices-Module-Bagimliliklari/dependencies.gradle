@@ -4,9 +4,9 @@ ext {
      */
     versions = [
             springBoot          : "3.2.2",
-            lombok              : "1.18.36",
+            lombok              : "1.18.28",
             mapStruct           : "1.5.5.Final",
-            postgreSql          : "42.7.1",
+            postgreSql          : "42.7.3",
             swaggerApi          : "2.3.0"
     ]
 
@@ -30,5 +30,3 @@ ext {
             swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi"
     ]
 }
-
-
